@@ -1,0 +1,61 @@
+@import url(./global.css);
+
+body{
+    background: pink;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.cabecalho{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+    position: fixed;
+}
+
+.cabecalho picture svg{
+    width: 160px;
+}
+
+.cabecalho ul{
+    display: flex;
+    margin-right: 10px;
+}
+
+.cabecalho ul li{
+    list-style-type:none;
+}
+
+.cabecalho a{
+    text-transform: uppercase;
+    
+    text-decoration: none;
+    color: white;
+    margin: 0.5rem;    
+}
+
+.cabecalho .button{
+    background: #b535f6;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 2s ease;
+}
+
+.cabecalho a:hover{
+    cursor: pointer;
+}
+
+.button:hover{
+    
+    background: #ffffff;
+    color: #000000;
+}
+
+.cabecalho picture svg:hover{
+    cursor: pointer;
+}
