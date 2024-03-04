@@ -33,7 +33,6 @@ body {
 
 .cabecalho a {
     text-transform: uppercase;
-
     text-decoration: none;
     color: white;
     margin: 0.5rem;
@@ -63,7 +62,11 @@ body {
 
 header {
     margin: 0;
+    background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite alternate;
 }
+
 
 header .borda-superior {
     margin: 0;
@@ -73,37 +76,6 @@ header .borda-superior {
     background: #020228;
 }
 
-.box {
-    position: absolute;
-
-    width: 100%;
-    height: 200px;
-    margin-top: 6rem;
-    animation: animation-header 3s infinite alternate;
-    filter: blur(100px);
-}
-
-@keyframes animation-header {
-    0% {
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Preto com 50% de transparência */
-    }
-
-    30% {
-        background-color: rgba(2, 2, 40, 0.5);
-        /* Azul escuro com 50% de transparência */
-    }
-
-    60% {
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Preto com 50% de transparência */
-    }
-
-    90% {
-        background-color: rgba(181, 53, 246, 0.5);
-        /* Rosa com 50% de transparência */
-    }
-}
 
 .container {
     margin-bottom: 3rem;
@@ -140,42 +112,153 @@ header .borda-superior {
     height: 0.30rem;
     margin: 0 auto;
     border-radius: 10px;
-    background: linear-gradient(45deg, #9b34ef 0%,#490cb0 20%);
+    background: linear-gradient(45deg, #9b34ef 0%, #490cb0 20%);
 }
 
-.text-preco{
+.text-preco {
     color: white;
     text-align: center;
     margin: 2rem 0 0.3rem 0;
 }
 
-.text-preco .text-valor{
+.text-preco .text-valor {
     font-size: 20px;
     margin: 0;
 }
 
-.text-preco h2{
+.text-preco h2 {
     align-items: center;
 }
 
-.text-preco .valor{
+.text-preco .valor {
     font-size: 40px;
     margin: 0 0 2rem 0;
 }
 
-.text-preco .valor .menor{
+.text-preco .valor .menor {
     font-size: 16px;
 }
 
-.text-preco button{
-    background-color: #490cb0;
+.text-preco button {
+    background: linear-gradient(45deg, #9b34ef, #490cb0);
+    width: 16rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+    padding: 20px 10px 20px 10px;
+    border-radius: 30px;
+    font-size: larger;
     margin: 0 0 2rem 0;
+    /*Movimentação do botão*/
+    animation: wiggle 2.2s linear infinite;
+    /*efeito de cor*/
+    outline: 3px solid transparent;
+    transition: background 1s, outline 1s, transform 1s;
+    background-size: 250%;
 }
 
-.text-preco p{
+.text-preco button:hover {
+    background: transparent;
+    background-position: 100%;
+    outline: 2px solid #b535f6;
+    transform: scale(1.05);
+}
+
+.text-preco p {
     font-size: 16px;
     margin: 0;
 }
 
+main {
+    color: white;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    gap: 10rem;
+}
+
+main .title-main {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+main .container-cards {
+    display: flex;
+    justify-content: space-between;
+}
 
 
+main .container-cards .card-01,
+main .container-cards .card-02 {
+    height: 600px;
+    border-radius: 10px;
+    background-color: #490cb0;
+
+
+}
+
+
+
+
+/*olhar essa parte depois, não está funcionando como eu quero
+header::after {
+    content: "";
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    bottom: -250px;
+    background: linear-gradient(0deg, #020228, transparent);
+
+  }
+*/
+
+/*Animações*/
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes wiggle {
+
+    0%,
+    10% {
+        transform: rotate(0);
+    }
+
+    15% {
+        transform: rotate(-15deg);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    35% {
+        transform: rotate(-10deg);
+    }
+
+    40%,
+    100% {
+        transform: rotate(0);
+    }
+}
